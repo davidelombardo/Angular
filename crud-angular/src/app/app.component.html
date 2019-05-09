@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container-fluid">
+  <div style="text-align:center" class="row">
+    <div class="col-md-12">
+      <h1>
+        {{ title }}
+      </h1>
+    </div>
+  </div>
+
+  <a
+    href="#"
+    id="btnNewUser"
+    class="btn btn-success"
+    (click)="newUser()"
+    style="margin-left: 2.5%"
+    >New User</a
+  >
+
+  <div class="row">
+    <div class="col-md-6">
+      <app-users (updateUser)="update($event)"></app-users>
+    </div>
+    <!-- ngIf in base al valore della variabile true/false fa visualizzare il metodo o la variabile -->
+    <div class="col-md-6" *ngIf="showForm">
+      <app-user-form [user]="userSelected"></app-user-form>
+    </div>
+  </div>
+</div>
